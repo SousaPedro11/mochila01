@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Jul 02 09:09:32 BRT 2018
+jcommander-1.72-sources.jar>nexus=
+jcommander-1.72.pom>nexus=
+jcommander-1.72.jar>nexus=

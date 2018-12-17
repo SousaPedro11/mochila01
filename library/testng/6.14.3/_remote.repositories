@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Jul 02 09:09:31 BRT 2018
+testng-6.14.3-sources.jar>nexus=
+testng-6.14.3.pom>nexus=
+testng-6.14.3.jar>nexus=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Jul 02 09:09:31 BRT 2018
+http\://docker01.iec.gov.br\:9005/nexus/content/groups/public/.lastUpdated=1530533371366
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1530532829153
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.testng\:testng\:jar\:sources\:6.14.3 from/to central (https\://repo.maven.apache.org/maven2)\: sun.security.validator.ValidatorException\: PKIX path building failed\: sun.security.provider.certpath.SunCertPathBuilderException\: unable to find valid certification path to requested target
