@@ -54,7 +54,8 @@ public class Gulosa extends Utilitario {
         for (int i = 1; i < this.getItens().size(); i++) {
             final Item candidato = this.getItens().get(i);
             int j = i - 1;
-            while ((j >= 0) && (candidato.getValor() > this.getItens().get(j).getValor())) {
+            while ((j >= 0) && ((candidato.getValor() / candidato.getPeso()) > (this.getItens().get(j).getValor()
+                            / this.getItens().get(j).getPeso()))) {
                 this.c++;
                 this.getItens().set(j + 1, this.getItens().get(j));
                 j = j - 1;
