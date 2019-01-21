@@ -45,7 +45,7 @@ public class Mochila {
 
         final List<Item> itens = new ArrayList<>();
         try (final BufferedReader leitor = new BufferedReader(new InputStreamReader(
-                        new FileInputStream("./Documentos/entrada-mochila.txt"),
+                        new FileInputStream("entrada-mochila.txt"),
                         "UTF-8"))) {
 
             // ler cabecalho
