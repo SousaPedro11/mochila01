@@ -14,13 +14,15 @@ public class Solucao {
 
     public Solucao(final String estrategia) {
 
-        this.estrategia = estrategia;
+        this.estrategia = estrategia.toUpperCase();
     }
 
     public String mostrar() {
 
         final StringBuilder sb = new StringBuilder();
-        sb.append("# Dados usando o algoritmo ").append(this.getEstrategia()).append("\n");
+        sb.append("# DADOS USANDO O ALGORITMO ")
+                        .append(this.getEstrategia())
+                        .append("\n");
         sb.append("# Valor: ").append(this.getValor());
         // sb.append("# Peso: ").append(this.getPeso()).append("\n");
         // String obj = "# Objetos: [";

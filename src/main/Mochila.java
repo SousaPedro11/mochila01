@@ -9,6 +9,8 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import estrategias.DinamicaProg;
 import estrategias.Gulosa;
 import modelo.Item;
@@ -18,6 +20,7 @@ public class Mochila {
     public static void main(final String[] args) {
 
         new Mochila();
+
     }
 
     private int indice = 0;
@@ -28,17 +31,33 @@ public class Mochila {
 
         final List<Item> objetos = this.lerItens();
 
+        final StringBuilder sb1 = new StringBuilder();
         Instant now1 = Instant.now();
-        new Gulosa(objetos, this.capacidade).resolver();
+        final String resultado1 = new Gulosa(objetos, this.capacidade).resolver();
         Instant now2 = Instant.now();
-        System.out.println("# Tempo: " + Duration.between(now1, now2).toString().replaceAll("PT", ""));
+        final String tempo1 = "# Tempo: " + Duration.between(now1, now2).toString().replaceAll("PT", "");
+        // System.out.println(tempo);
+
+        sb1.append(resultado1)
+                        .append("\n")
+                        .append(tempo1)
+                        .append("\n");
 
         System.out.println();
 
         now1 = Instant.now();
-        new DinamicaProg(this.capacidade, objetos).resolver();
+        final String resultado2 = new DinamicaProg(this.capacidade, objetos).resolver();
         now2 = Instant.now();
-        System.out.println("# Tempo: " + Duration.between(now1, now2).toString().replaceAll("PT", ""));
+        // System.out.println(tempo);
+        final String tempo2 = "# Tempo: " + Duration.between(now1, now2).toString().replaceAll("PT", "");
+
+        sb1.append("\n")
+                        .append(resultado2)
+                        .append("\n")
+                        .append(tempo2)
+                        .append("\n");
+
+        JOptionPane.showMessageDialog(null, sb1.toString(), "Resultado Problema da Mochila", JOptionPane.PLAIN_MESSAGE);
     }
 
     private List<Item> lerItens() {
@@ -49,7 +68,7 @@ public class Mochila {
                         "UTF-8"))) {
 
             // ler cabecalho
-            final String linha1 = leitor.readLine();
+            /* final String linha1 = */leitor.readLine();
             this.setCapacidade(Integer.parseInt(leitor.readLine()));
             String linha = null;
             while ((linha = leitor.readLine()) != null) {

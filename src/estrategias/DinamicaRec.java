@@ -44,8 +44,9 @@ public class DinamicaRec extends Utilitario {
     }
 
     @Override
-    public void resolver() {
+    public String resolver() {
 
+        final StringBuilder sb = new StringBuilder();
         final Solucao solucao = new Solucao("Dinâmico");
         solucao.setValor(this.recursivo(this.getItens(), this.getW(), this.getItens().size(), false, ""));
         solucao.setItens(new ArrayList<Item>());
@@ -73,7 +74,12 @@ public class DinamicaRec extends Utilitario {
         }
 
         System.out.println(solucao.mostrar());
-        System.out.println("# Número de instruções executadas: " + this.c);
+        final String numeroInstrucoes = "# Número de instruções executadas: " + this.c;
+        System.out.println(numeroInstrucoes);
+        sb.append(solucao.mostrar())
+                        .append("\n")
+                        .append(numeroInstrucoes);
+        return sb.toString();
     }
 
     private int recursivo(final List<Item> itens, final int W, final int n, final boolean add, String s) {

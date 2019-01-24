@@ -44,8 +44,9 @@ public class DinamicaProg extends Utilitario {
     }
 
     @Override
-    public void resolver() {
+    public String resolver() {
 
+        final StringBuilder sb = new StringBuilder();
         final Solucao solucao = new Solucao("Dinâmico");
         int i, w;
         final int n = this.itens.size();
@@ -66,8 +67,13 @@ public class DinamicaProg extends Utilitario {
         }
         solucao.setValor(K[n][this.capacidade]);
 
-        System.out.println(solucao.mostrar());
-        System.out.println("# Número de instruções executadas: " + this.c);
+        // System.out.println(solucao.mostrar());
+        final String numeroInstrucoes = "# Número de instruções executadas: " + this.c;
+        // System.out.println(numeroInstrucoes);
+        sb.append(solucao.mostrar())
+                        .append("\n")
+                        .append(numeroInstrucoes);
+        return sb.toString();
     }
 
     private int maximo(final int a, final int b) {

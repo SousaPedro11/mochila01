@@ -6,7 +6,7 @@ import modelo.Item;
 
 public abstract class Utilitario {
 
-    public abstract void resolver();
+    public abstract String resolver();
 
     public int calculaBeneficio(final List<Item> itens) {
 

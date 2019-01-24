@@ -22,7 +22,9 @@ public class ForcaBruta extends Utilitario {
     }
 
     @Override
-    public void resolver() {
+    public String resolver() {
+
+        final StringBuilder sb = new StringBuilder();
 
         final List<List<Item>> permutacoes = this.subconjuntos(this.itens);
         int melhorValor = 0;
@@ -43,7 +45,12 @@ public class ForcaBruta extends Utilitario {
             }
         }
         System.out.println(solucao.mostrar());
-        System.out.println("# Número de instruções executadas: " + this.c);
+        final String numeroInstrucoes = "# Número de instruções executadas: " + this.c;
+        System.out.println(numeroInstrucoes);
+        sb.append(solucao.mostrar())
+                        .append("\n")
+                        .append(numeroInstrucoes);
+        return sb.toString();
     }
 
     private List<List<Item>> subconjuntos(final List<Item> lista) {
